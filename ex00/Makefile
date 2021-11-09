@@ -6,14 +6,14 @@
 #    By: tomma <tomma@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 17:11:04 by tomma             #+#    #+#              #
-#    Updated: 2021/11/09 17:12:02 by tomma            ###   ########.fr        #
+#    Updated: 2021/11/09 17:29:46 by tomma            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= megaphone
 
 SRCS			= megaphone.cpp
-OBJS			= $(SRCS:.c=.o)
+OBJS			= $(SRCS:.cpp=.o)
 
 CC				= c++
 RM				= rm -rf

@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:44:25 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/21 14:33:50 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/21 15:33:31 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,34 @@ void	Pbook::searchContact(void)
 		this->contacts[i].showContactList();
 }
 
+void	Pbook::exitPbook(void)
+{
+	std::string	input;
+
+	std::cout << "# All the contacts will be lost. Are you sure you want to exit? (Y/n) ";
+	std::getline(std::cin, input);
+	if (input == "Y" | input == "y")
+	{
+		std::cout << "# Deleting all the data" << std::endl;
+		sleep(3);
+		std::cout << "# This might take several seconds..." << std::endl;
+		sleep(3);
+		std::cout << "# Ok, i'm done. Bye, friend." << std::endl;
+		exit (0);
+	}
+	else
+	{
+		std::cout << "# Abort" << std::endl;
+		return ;
+	}
+}
+
 int	main()
 {
 	Pbook		pbook;
 	std::string	command;
-	bool		run;
 
-	// pbook.searchContact();
-	run = true;
-	while (run)
+	while (true)
 	{
 		std::cout << "> ";
 		// std::cin >> command;
@@ -52,6 +71,6 @@ int	main()
 		else if (command == "SEARCH")
 			pbook.searchContact();
 		else if (command == "EXIT")
-			run = false;
+			pbook.exitPbook();
 	}
 }

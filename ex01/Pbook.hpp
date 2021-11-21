@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:50:22 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/20 13:13:35 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/21 14:20:44 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <ctype.h>
 # include <iomanip>
 # include <string>
+# include <cstdlib>
 # include "Contacts.hpp"
 
 
@@ -28,7 +29,8 @@ private:
 public:
 	Pbook();
 
-	void	addContact();
+	void	addContact(void);
+	void	searchContact();
 };
 
 #endif

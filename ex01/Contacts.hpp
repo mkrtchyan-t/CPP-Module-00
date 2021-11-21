@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:37:34 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/20 13:17:04 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/21 14:18:07 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
 	Contacts();
 
 	bool	addInfo(int index);
+	void	showContactList(void);
+	void	showHeader(void);
 };
 
 #endif

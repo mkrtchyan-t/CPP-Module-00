@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:44:43 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/20 13:23:43 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/21 14:35:45 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,17 @@ bool	Contacts::addInfo(int index)
 	}
 	std::cout << "Contact is added !" << std::endl;
 	return true;
+}
+
+void	Contacts::showContactList(void)
+{
+	std::cout << "|" << std::setw(9) << this->index << " |";
+	for (int i = 0; i < 3; i++)
+	{
+		if (this->info[i].length() > 10)
+			std::cout << this->info[i].substr(0, 9) << ".|";
+		else
+			std::cout << this->info[i] << std::setw(11 - this->info[i].length()) << "|";
+	}
+	std::cout << std::endl << "|-------------------------------------------|" << std::endl;
 }

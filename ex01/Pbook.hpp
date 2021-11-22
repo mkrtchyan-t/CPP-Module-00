@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:50:22 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/21 14:50:33 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/22 13:11:08 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 class Pbook {
 private:
 	int			amount;
+	int			position;
 	Contacts	contacts[9];
 
 public:

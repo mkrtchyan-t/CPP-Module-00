@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:44:43 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/21 14:35:45 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/22 14:25:23 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,16 @@ void	Contacts::showContactList(void)
 			std::cout << this->info[i] << std::setw(11 - this->info[i].length()) << "|";
 	}
 	std::cout << std::endl << "|-------------------------------------------|" << std::endl;
+}
+
+void	Contacts::showContact(int index)
+{
+	std::cout << std::endl << "\t\tContact No. " << index << std::endl;
+	std::cout << "|-------------------------------------------|" << std::endl;
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << "|" << this->fields[i] << ": " << this->info[i]
+			<< std::setw(42 - (this->fields[i].length() + this->info[i].length())) << "|" << std::endl;
+	}
+	std::cout << "|-------------------------------------------|" << std::endl;
 }

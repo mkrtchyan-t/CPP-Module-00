@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:44:25 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/22 13:19:57 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/22 14:20:52 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,24 @@ void	Pbook::addContact(void)
 
 void	Pbook::searchContact(void)
 {
+	if (this->amount == 0)
+	{
+		std::cout << "# There is no contacts to search for" << std::endl;
+		return ;
+	}
 	std::cout << "|-------------------------------------------|" << std::endl;
 	std::cout << "|   index  |first name| last name| nickname |" << std::endl;
 	std::cout << "|-------------------------------------------|" << std::endl;
 	for (int i = 0; i < this->amount; i++)
 		this->contacts[i].showContactList();
+	int	index;
+	std::cout << "# Enter the index you're looking for: ";
+	while (!(std::cin >> index) || (index < 0 || index > this->amount))
+	{
+		std::cin.clear();
+		std::cout << "# Invalid index" << std::endl;
+	}
+	this->contacts[index - 1].showContact(index);
 }
 
 void	Pbook::exitPbook(void)
@@ -72,7 +85,7 @@ int	main()
 
 	while (true)
 	{
-		std::cout << "> ";
+		std::cout << ">";
 		// std::cin >> command;
 		std::getline(std::cin, command);
 		if (command == "ADD")

@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:44:25 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/22 14:20:52 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/23 02:04:28 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ Pbook::Pbook()
 {
 	this->amount = 0;
 	this->position = 0;
+	std::cout << "# WELCOME TO PBOOK !!!" << std::endl;
+	std::cout << "# Enter your first command: ADD, SEARCH, EXIT" << std::endl;
 }
 
 void	Pbook::addContact(void)
@@ -46,10 +48,13 @@ void	Pbook::searchContact(void)
 	std::cout << "|-------------------------------------------|" << std::endl;
 	for (int i = 0; i < this->amount; i++)
 		this->contacts[i].showContactList();
-	int	index;
+	int		index;
 	std::cout << "# Enter the index you're looking for: ";
-	while (!(std::cin >> index) || (index < 0 || index > this->amount))
+	while (true)
 	{
+		std::cin >> index;
+		if (index > 0 && index <= this->amount)
+			break ;
 		std::cin.clear();
 		std::cout << "# Invalid index" << std::endl;
 	}

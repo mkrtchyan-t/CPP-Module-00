@@ -6,7 +6,7 @@
 /*   By: tomma <tomma@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:44:25 by tomma             #+#    #+#             */
-/*   Updated: 2021/11/21 15:33:31 by tomma            ###   ########.fr       */
+/*   Updated: 2021/11/22 13:19:57 by tomma            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,23 @@
 Pbook::Pbook()
 {
 	this->amount = 0;
+	this->position = 0;
 }
 
 void	Pbook::addContact(void)
 {
 	if (this->amount == 8)
-		this->amount = 0;
-	else if (this->contacts[this->amount].addInfo(this->amount + 1))
+	{
+		if (this->position == 8)
+			this->position = 0;
+		else if (this->contacts[this->position].addInfo(this->position + 1))
+			this->position++;
+	}
+	else if (this->contacts[this->position].addInfo(this->position + 1))
+	{
 		this->amount++;
+		this->position++;
+	}
 }
 
 void	Pbook::searchContact(void)

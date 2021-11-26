@@ -50,3 +50,37 @@ Account::~Account()
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed" << std::endl;
 }
+
+void	Account::_displayTimestamp()
+{
+	std::chrono::time_point<std::chrono::system_clock> now = std::chrono::system_clock::now();
+	std::time_t time_now = std::chrono::system_clock::to_time_t(now);
+
+	tm timestamp = *localtime(&time_now);
+	std::cout << std::setfill('0') << "[" << (timestamp.tm_year + 1900)
+			<< std::setw(2) << timestamp.tm_mon
+			<< std::setw(2) << timestamp.tm_mday << "_"
+			<< std::setw(2) << timestamp.tm_hour
+			<< std::setw(2) << timestamp.tm_min
+			<< std::setw(2) << timestamp.tm_sec << "] ";
+}
+
+int	Account::getNbAccounts()
+{
+	return (Account::_nbAccounts);
+}
+
+int	Account::getTotalAmount()
+{
+	return (Account::_totalAmount);
+}
+
+int	Account::getNbDeposits()
+{
+	return (Account::_totalNbDeposits);
+}
+
+int	Account::getNbWithdrawals()
+{
+	return (Account::_totalNbWithdrawals);
+}
